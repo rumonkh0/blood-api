@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         // required: [true, 'Please add an email'],
-        unique: true,
+        // unique: true,
         match: [
             /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
             'Please add a valid email',
@@ -30,20 +30,20 @@ const UserSchema = new mongoose.Schema({
     },
     permanent_zilla: {
         type: String,
-        required: true
+        // required: true
     },
     permanent_tahna: {
         type: String,
-        required: true
+        // required: true
     },
     permanent_address: String,
     present_zilla: {
         type: String,
-        required: true
+        // required: true
     },
     present_thana: {
         type: String,
-        required: true
+        // required: true
     },
     present_address: String,
     blood_group: {

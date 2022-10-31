@@ -1,0 +1,34 @@
+{
+  "name": "blood-api",
+  "version": "1.0.0",
+  "description": "Api for blood sharing site",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rumonkh0/blood-api.git"
+  },
+  "keywords": [
+    "blood",
+    "donate",
+    "donation"
+  ],
+  "author": "rumonkh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rumonkh0/blood-api/issues"
+  },
+  "homepage": "https://github.com/rumonkh0/blood-api#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

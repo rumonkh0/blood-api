@@ -7,7 +7,7 @@ import style from "./reg.module.css";
 function Register() {
   const { state, register } = useContext(AuthContext);
   const [formData, setFormData] = useState({});
-  const { name, mobile, password, password1 } = formData;
+  const { name, mobile, blood_group, password, password1 } = formData;
   const { form, loginpage, formsection, dateandtime, date, genderbtn } = style;
 
   const onChange = (e) => {
@@ -47,8 +47,14 @@ function Register() {
               <label htmlFor="name" className="form-label">
                 Your Name
               </label>
-              <input type="text" className="form-control" id="name" name="name" 
-                onChange={onChange} required />
+              <input
+                type="text"
+                className="form-control"
+                id="name"
+                name="name"
+                onChange={onChange}
+                required
+              />
               <p>Please Text Your Name</p>
             </div>
             <fieldset className="border rounded-3 p-3">
@@ -148,8 +154,12 @@ function Register() {
                 <label htmlFor="address" className="form-label">
                   Address
                 </label>
-                <input type="name" className="form-control" id="address" 
-                onChange={onChange}/>
+                <input
+                  type="name"
+                  className="form-control"
+                  id="address"
+                  onChange={onChange}
+                />
               </div>
             </fieldset>
             <fieldset className="border rounded-3 p-3">
@@ -247,8 +257,12 @@ function Register() {
                 <label htmlFor="address" className="form-label">
                   Address
                 </label>
-                <input type="name" className="form-control" id="address" 
-                onChange={onChange}/>
+                <input
+                  type="name"
+                  className="form-control"
+                  id="address"
+                  onChange={onChange}
+                />
               </div>
             </fieldset>
             <div className="mb-3">
@@ -278,10 +292,16 @@ function Register() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="blood" className="form-label">
+              <label htmlFor="blood_group" className="form-label">
                 Blood Group
               </label>
-              <select id="blood" className="form-control" name="blood">
+              <select
+                id="blood"
+                className="form-control"
+                name="blood_group"
+                value={blood_group? blood_group: "O+"}
+                onChange={onChange}
+              >
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
                 <option value="B+">B+</option>
@@ -355,8 +375,13 @@ function Register() {
                   <option value="2022">2022</option>
                 </select>
               </div>
-              <input type="radio" className="mt-3" name="gender" value="male" 
-                onChange={onChange}/>{" "}
+              <input
+                type="radio"
+                className="mt-3"
+                name="gender"
+                value="male"
+                onChange={onChange}
+              />{" "}
               Male
               <input
                 className={genderbtn}
@@ -371,17 +396,31 @@ function Register() {
               <label htmlFor="pass" className="form-label">
                 Password
               </label>
-              <input type="password" name="password" className="form-control" id="pass" 
-                onChange={onChange}/>
+              <input
+                type="password"
+                name="password"
+                className="form-control"
+                id="pass"
+                onChange={onChange}
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="pass" className="form-label">
                 Confirm Password
               </label>
-              <input type="password" name="password1" className="form-control" id="pass" 
-                onChange={onChange}/>
+              <input
+                type="password"
+                name="password1"
+                className="form-control"
+                id="pass"
+                onChange={onChange}
+              />
             </div>
-            <button type="submit" onClick={onSubmit} className="btn btn-success form-control">
+            <button
+              type="submit"
+              onClick={onSubmit}
+              className="btn btn-success form-control"
+            >
               Submit
             </button>
           </form>

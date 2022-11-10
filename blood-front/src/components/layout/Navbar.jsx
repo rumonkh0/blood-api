@@ -29,7 +29,7 @@ function Navbar() {
           <ul>
             <li>
               <Link className={btn1}>
-                <p>Hello, {user && user.data.name}</p>
+                {/* <p>Hello, {user && user.data.name}</p> */}
               </Link>
             </li>
             <li>

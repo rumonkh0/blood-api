@@ -424,7 +424,7 @@ function Register() {
               <input
                 type="radio"
                 className="mt-3"
-                name="gender"
+                name="gendermf"
                 value="male"
                 onChange={onChange}
               />{" "}
@@ -432,7 +432,7 @@ function Register() {
               <input
                 className={genderbtn}
                 type="radio"
-                name="gender"
+                name="gendermf"
                 value="female"
                 onChange={onChange}
               />{" "}

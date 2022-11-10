@@ -33,7 +33,7 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/" className={[btn1, active].join(" ")} active>
+              <Link to="/" className={[btn1, active].join(" ")}>
                 Home
               </Link>
             </li>
@@ -83,7 +83,7 @@ function Navbar() {
         <div>
           <ul>
             <li>
-              <Link to="/" className={[btn1, active].join(" ")} active>
+              <Link to="/" className={[btn1, active].join(" ")}>
                 Home
               </Link>
             </li>

@@ -6,8 +6,28 @@ import style from "./reg.module.css";
 
 function Register() {
   const { state, register } = useContext(AuthContext);
-  const [formData, setFormData] = useState({});
-  const { name, mobile, blood_group, password, password1 } = formData;
+  const [formData, setFormData] = useState({
+    blood_group: "O+",
+    gender: "male",
+    permanent_zilla: "Dhaka",
+    permanent_tahna: "Pabna",
+    present_zilla: "Dhaka",
+    present_thana: "Pabna",
+  });
+  const {
+    name,
+    mobile,
+    permanent_zilla,
+    permanent_tahna,
+    // permanent_address,
+    present_zilla,
+    present_thana,
+    // present_address,
+    blood_group,
+    // last_donate,
+    password,
+    password1,
+  } = formData;
   const { form, loginpage, formsection, dateandtime, date, genderbtn } = style;
 
   const onChange = (e) => {
@@ -66,7 +86,13 @@ function Register() {
                 <label htmlFor="zilla" className="form-label">
                   Zilla
                 </label>
-                <select id="zilla" className="form-control" name="zilla">
+                <select
+                  id="zilla"
+                  className="form-control"
+                  value={permanent_zilla}
+                  name="permanent_zilla"
+                  onChange={onChange}
+                >
                   <option value="Bagerhat">Bagerhat</option>
                   <option value="Bandarban">Bandarban</option>
                   <option value="Barguna">Barguna</option>
@@ -138,7 +164,13 @@ function Register() {
                 <label htmlFor="thana" className="form-label">
                   Thana
                 </label>
-                <select id="thana" className="form-control" name="thana">
+                <select
+                  id="thana"
+                  className="form-control"
+                  value={permanent_tahna}
+                  name="permanent_tahna"
+                  onChange={onChange}
+                >
                   <option value="Noakhali">Noakhali</option>
                   <option value="Pabna">Pabna</option>
                   <option value="Panchagarh">Panchagarh</option>
@@ -156,6 +188,7 @@ function Register() {
                 </label>
                 <input
                   type="name"
+                  name="permanent_address"
                   className="form-control"
                   id="address"
                   onChange={onChange}
@@ -170,7 +203,13 @@ function Register() {
                 <label htmlFor="zella" className="form-label">
                   Zilla
                 </label>
-                <select id="zilla" className="form-control" name="zilla">
+                <select
+                  id="zilla"
+                  className="form-control"
+                  value={present_zilla}
+                  name="present_zilla"
+                  onChange={onChange}
+                >
                   <option value="Bagerhat">Bagerhat</option>
                   <option value="Bandarban">Bandarban</option>
                   <option value="Barguna">Barguna</option>
@@ -241,7 +280,13 @@ function Register() {
                 <label htmlFor="thana" className="form-label">
                   Thana
                 </label>
-                <select id="thana" className="form-control" name="thana">
+                <select
+                  id="thana"
+                  className="form-control"
+                  value={present_thana}
+                  name="present_thana"
+                  onChange={onChange}
+                >
                   <option value="Noakhali">Noakhali</option>
                   <option value="Pabna">Pabna</option>
                   <option value="Panchagarh">Panchagarh</option>
@@ -260,6 +305,7 @@ function Register() {
                 <input
                   type="name"
                   className="form-control"
+                  name="present_address"
                   id="address"
                   onChange={onChange}
                 />
@@ -299,7 +345,7 @@ function Register() {
                 id="blood"
                 className="form-control"
                 name="blood_group"
-                value={blood_group? blood_group: "O+"}
+                value={blood_group}
                 onChange={onChange}
               >
                 <option value="A+">A+</option>

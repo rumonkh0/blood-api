@@ -49,7 +49,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     enum: ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],
   },
-  gender: { type: String, enum: ["male", "female"] },
+  gendermf: { type: String, enum: ["male", "female"] },
   last_donate: Date,
   createdAt: {
     type: Date,

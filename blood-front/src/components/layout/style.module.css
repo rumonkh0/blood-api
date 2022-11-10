@@ -16,6 +16,7 @@ body {
 .navitem {
   display: flex;
   justify-content: space-between;
+  height: 50px;
 }
 
 .navitem ul .donate {
@@ -58,15 +59,18 @@ ul li a:hover {
 
 .herosec {
   display: flex;
-  /* height: 100vh; */
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
 }
 
 .left {
   width: 50%;
-  /* height: 100vh; */
+  height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-left: 50px;
 
 }
@@ -94,8 +98,10 @@ ul li a:hover {
 }
 
 .right img {
-  max-width: 100%;
-  height: auto;
+  max-width: 85%;
+  max-height: 100%;
+  object-fit: cover;
+
 }
 
 .btn1 li {
@@ -119,7 +125,7 @@ ul li a:hover {
 }
 
 
-.btn-menu {
+.btnmenu {
   display: flex;
   margin-top: 50px;
 

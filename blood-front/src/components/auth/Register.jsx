@@ -7,25 +7,25 @@ function Register() {
 
   return (
     <>
-      <div class={loginpage}>
-        <div class={'form-section'+' '+formsection}>
-          <form class={form}>
+      <div className={loginpage}>
+        <div className={"form-section"+' '+formsection}>
+          <form className={form}>
             <h3>Sign Up</h3>
-            <div class="mb-3">
-              <label for="name" class="form-label">
+            <div className="mb-3">
+              <label for="name" className="form-label">
                 Your Name
               </label>
-              <input type="text" class="form-control" id="name" required />
+              <input type="text" className="form-control" id="name" required />
               <p>Please Text Your Name</p>
             </div>
-            <fieldset class="border rounded-3 p-3">
-              <legend class="float-none w-auto px-3">Permanent Address</legend>
+            <fieldset className="border rounded-3 p-3">
+              <legend className="float-none w-auto px-3">Permanent Address</legend>
 
-              <div class="mb-3">
-                <label for="zilla" class="form-label">
+              <div className="mb-3">
+                <label for="zilla" className="form-label">
                   Zilla
                 </label>
-                <select id="zilla" class="form-control" name="zilla">
+                <select id="zilla" className="form-control" name="zilla">
                   <option value="Bagerhat">Bagerhat</option>
                   <option value="Bandarban">Bandarban</option>
                   <option value="Barguna">Barguna</option>
@@ -91,13 +91,13 @@ function Register() {
                   <option value="Tangail">Tangail</option>
                   <option value="Thakurgaon">Thakurgaon</option>
                 </select>
-                {/*<input type="name" class="form-control" id="zella" required> */}
+                {/*<input type="name" className="form-control" id="zella" required> */}
               </div>
-              <div class="mb-3">
-                <label for="thana" class="form-label">
+              <div className="mb-3">
+                <label for="thana" className="form-label">
                   Thana
                 </label>
-                <select id="thana" class="form-control" name="thana">
+                <select id="thana" className="form-control" name="thana">
                   <option value="Noakhali">Noakhali</option>
                   <option value="Pabna">Pabna</option>
                   <option value="Panchagarh">Panchagarh</option>
@@ -109,20 +109,20 @@ function Register() {
                   <option value="Rangpur">Rangpur</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <label for="address" class="form-label">
+              <div className="mb-3">
+                <label for="address" className="form-label">
                   Address
                 </label>
-                <input type="name" class="form-control" id="address" />
+                <input type="name" className="form-control" id="address" />
               </div>
             </fieldset>
-            <fieldset class="border rounded-3 p-3">
-              <legend class="float-none w-auto px-3">Permanent Address</legend>
-              <div class="mb-3">
-                <label for="zella" class="form-label">
+            <fieldset className="border rounded-3 p-3">
+              <legend className="float-none w-auto px-3">Permanent Address</legend>
+              <div className="mb-3">
+                <label for="zella" className="form-label">
                   Zilla
                 </label>
-                <select id="zilla" class="form-control" name="zilla">
+                <select id="zilla" className="form-control" name="zilla">
                   <option value="Bagerhat">Bagerhat</option>
                   <option value="Bandarban">Bandarban</option>
                   <option value="Barguna">Barguna</option>
@@ -189,11 +189,11 @@ function Register() {
                   <option value="Thakurgaon">Thakurgaon</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <label for="thana" class="form-label">
+              <div className="mb-3">
+                <label for="thana" className="form-label">
                   Thana
                 </label>
-                <select id="thana" class="form-control" name="thana">
+                <select id="thana" className="form-control" name="thana">
                   <option value="Noakhali">Noakhali</option>
                   <option value="Pabna">Pabna</option>
                   <option value="Panchagarh">Panchagarh</option>
@@ -205,40 +205,40 @@ function Register() {
                   <option value="Rangpur">Rangpur</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <label for="address" class="form-label">
+              <div className="mb-3">
+                <label for="address" className="form-label">
                   Address
                 </label>
-                <input type="name" class="form-control" id="address" />
+                <input type="name" className="form-control" id="address" />
               </div>
             </fieldset>
-            <div class="mb-3">
-              <label for="num" class="form-label">
+            <div className="mb-3">
+              <label for="num" className="form-label">
                 Mobile Number
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="num"
                 aria-describedby="emailHelp"
               />
             </div>
-            <div class="mb-3">
-              <label for="fbid" class="form-label">
+            <div className="mb-3">
+              <label for="fbid" className="form-label">
                 FaceBook Id
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="fbid"
                 aria-describedby="emailHelp"
               />
             </div>
-            <div class="mb-3">
-              <label for="blood" class="form-label">
+            <div className="mb-3">
+              <label for="blood" className="form-label">
                 Blood Group
               </label>
-              <select id="blood" class="form-control" name="blood">
+              <select id="blood" className="form-control" name="blood">
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
                 <option value="B+">B+</option>
@@ -249,12 +249,12 @@ function Register() {
                 <option value="O-">O-</option>
               </select>
             </div>
-            <div class="mb-3 blddonate">
-              <label for="lastdonate" class="form-label">
+            <div className="mb-3 blddonate">
+              <label for="lastdonate" className="form-label">
                 Date of Last Blood Donation
               </label>
-              <div class={dateandtime}>
-                <select class={"form-control" + ' ' + date} name="date">
+              <div className={dateandtime}>
+                <select className={"form-control" + ' ' + date} name="date">
                   <option value="01">1</option>
                   <option value="02">2</option>
                   <option value="03">3</option>
@@ -287,7 +287,7 @@ function Register() {
                   <option value="30">30</option>
                   <option value="31">31</option>
                 </select>
-                <select class={"form-control"  + ' ' + date} name="month">
+                <select className={"form-control"  + ' ' + date} name="month">
                   <option value="January">January</option>
                   <option value="February">February</option>
                   <option value="March">March</option>
@@ -301,7 +301,7 @@ function Register() {
                   <option value="November">November</option>
                   <option value="December">December</option>
                 </select>
-                <select class={"form-control" + ' ' +  date} name="year">
+                <select className={"form-control" + ' ' +  date} name="year">
                   <option value="2015">2015</option>
                   <option value="2016">2016</option>
                   <option value="2017">2017</option>
@@ -312,23 +312,23 @@ function Register() {
                   <option value="2022">2022</option>
                 </select>
               </div>
-              <input type="radio" class=" mt-3" name="gender" value="male" />{" "}
+              <input type="radio" className="mt-3" name="gender" value="male" />{" "}
               Male
-              <input type="radio" name="gender" value="female" /> Female
+              <input className={genderbtn}type="radio" name="gender" value="female" /> Female
             </div>
-            <div class="mb-3">
-              <label for="pass" class="form-label">
+            <div className="mb-3">
+              <label for="pass" className="form-label">
                 Password
               </label>
-              <input type="password" class="form-control" id="pass" />
+              <input type="password" className="form-control" id="pass" />
             </div>
-            <div class="mb-3">
-              <label for="pass" class="form-label">
+            <div className="mb-3">
+              <label for="pass" className="form-label">
                 Confirm Password
               </label>
-              <input type="password" class="form-control" id="pass" />
+              <input type="password" className="form-control" id="pass" />
             </div>
-            <button type="submit" class="btn btn-success form-control">
+            <button type="submit" className="btn btn-success form-control">
               Submit
             </button>
           </form>

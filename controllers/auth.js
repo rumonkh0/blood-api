@@ -44,7 +44,7 @@ exports.login = asyncHandler(async (req, res, next) => {
 
     // Validate emil & password
     if (!mobile || !password) {
-        return next(new ErrorResponse('Please provide an email and password', 400));
+        return next(new ErrorResponse('Please provide an mobile and password', 400));
     }
 
     // Check for user

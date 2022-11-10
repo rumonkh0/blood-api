@@ -50,7 +50,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         enum: ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'],
     },
-    sex: String,
+    gender: String,
     last_donate: Date,
     createdAt: {
         type: Date,

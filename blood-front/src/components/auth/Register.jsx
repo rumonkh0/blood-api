@@ -1,28 +1,63 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import AuthContext from "../../context/auth/authContext";
+import Spinner from "../layout/Spinner";
+import { Navigate } from "react-router-dom";
 import style from "./reg.module.css";
 
 function Register() {
+  const { state, register } = useContext(AuthContext);
+  const [formData, setFormData] = useState({});
+  const { name, mobile, password, password1 } = formData;
+  const { form, loginpage, formsection, dateandtime, date, genderbtn } = style;
 
-    const {form, loginpage, formsection, dateandtime, date, genderbtn} = style;
+  const onChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (name == "" || mobile === "" || password === "") {
+      // setAlert("Please fill in all fields");
+    } else if (password != password1) {
+      console.log("pass not match");
+    } else {
+      console.log(formData);
+      register(formData);
+    }
+  };
+
+  if (state.loading) {
+    return <Spinner />;
+  }
+
+  if (state.isAuthenticated) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <>
       <div className={loginpage}>
-        <div className={"form-section"+' '+formsection}>
+        <div className={"form-section" + " " + formsection}>
           <form className={form}>
             <h3>Sign Up</h3>
             <div className="mb-3">
-              <label for="name" className="form-label">
+              <label htmlFor="name" className="form-label">
                 Your Name
               </label>
-              <input type="text" className="form-control" id="name" required />
+              <input type="text" className="form-control" id="name" name="name" 
+                onChange={onChange} required />
               <p>Please Text Your Name</p>
             </div>
             <fieldset className="border rounded-3 p-3">
-              <legend className="float-none w-auto px-3">Permanent Address</legend>
+              <legend className="float-none w-auto px-3">
+                Permanent Address
+              </legend>
 
               <div className="mb-3">
-                <label for="zilla" className="form-label">
+                <label htmlFor="zilla" className="form-label">
                   Zilla
                 </label>
                 <select id="zilla" className="form-control" name="zilla">
@@ -94,7 +129,7 @@ function Register() {
                 {/*<input type="name" className="form-control" id="zella" required> */}
               </div>
               <div className="mb-3">
-                <label for="thana" className="form-label">
+                <label htmlFor="thana" className="form-label">
                   Thana
                 </label>
                 <select id="thana" className="form-control" name="thana">
@@ -110,16 +145,19 @@ function Register() {
                 </select>
               </div>
               <div className="mb-3">
-                <label for="address" className="form-label">
+                <label htmlFor="address" className="form-label">
                   Address
                 </label>
-                <input type="name" className="form-control" id="address" />
+                <input type="name" className="form-control" id="address" 
+                onChange={onChange}/>
               </div>
             </fieldset>
             <fieldset className="border rounded-3 p-3">
-              <legend className="float-none w-auto px-3">Permanent Address</legend>
+              <legend className="float-none w-auto px-3">
+                present Address
+              </legend>
               <div className="mb-3">
-                <label for="zella" className="form-label">
+                <label htmlFor="zella" className="form-label">
                   Zilla
                 </label>
                 <select id="zilla" className="form-control" name="zilla">
@@ -190,7 +228,7 @@ function Register() {
                 </select>
               </div>
               <div className="mb-3">
-                <label for="thana" className="form-label">
+                <label htmlFor="thana" className="form-label">
                   Thana
                 </label>
                 <select id="thana" className="form-control" name="thana">
@@ -206,36 +244,41 @@ function Register() {
                 </select>
               </div>
               <div className="mb-3">
-                <label for="address" className="form-label">
+                <label htmlFor="address" className="form-label">
                   Address
                 </label>
-                <input type="name" className="form-control" id="address" />
+                <input type="name" className="form-control" id="address" 
+                onChange={onChange}/>
               </div>
             </fieldset>
             <div className="mb-3">
-              <label for="num" className="form-label">
+              <label htmlFor="num" className="form-label">
                 Mobile Number
               </label>
               <input
                 type="text"
                 className="form-control"
                 id="num"
+                name="mobile"
                 aria-describedby="emailHelp"
+                onChange={onChange}
               />
             </div>
             <div className="mb-3">
-              <label for="fbid" className="form-label">
+              <label htmlFor="fbid" className="form-label">
                 FaceBook Id
               </label>
               <input
                 type="text"
                 className="form-control"
                 id="fbid"
+                name="fb_id"
                 aria-describedby="emailHelp"
+                onChange={onChange}
               />
             </div>
             <div className="mb-3">
-              <label for="blood" className="form-label">
+              <label htmlFor="blood" className="form-label">
                 Blood Group
               </label>
               <select id="blood" className="form-control" name="blood">
@@ -250,11 +293,11 @@ function Register() {
               </select>
             </div>
             <div className="mb-3 blddonate">
-              <label for="lastdonate" className="form-label">
+              <label htmlFor="lastdonate" className="form-label">
                 Date of Last Blood Donation
               </label>
               <div className={dateandtime}>
-                <select className={"form-control" + ' ' + date} name="date">
+                <select className={"form-control" + " " + date} name="date">
                   <option value="01">1</option>
                   <option value="02">2</option>
                   <option value="03">3</option>
@@ -287,7 +330,7 @@ function Register() {
                   <option value="30">30</option>
                   <option value="31">31</option>
                 </select>
-                <select className={"form-control"  + ' ' + date} name="month">
+                <select className={"form-control" + " " + date} name="month">
                   <option value="January">January</option>
                   <option value="February">February</option>
                   <option value="March">March</option>
@@ -301,7 +344,7 @@ function Register() {
                   <option value="November">November</option>
                   <option value="December">December</option>
                 </select>
-                <select className={"form-control" + ' ' +  date} name="year">
+                <select className={"form-control" + " " + date} name="year">
                   <option value="2015">2015</option>
                   <option value="2016">2016</option>
                   <option value="2017">2017</option>
@@ -312,23 +355,33 @@ function Register() {
                   <option value="2022">2022</option>
                 </select>
               </div>
-              <input type="radio" className="mt-3" name="gender" value="male" />{" "}
+              <input type="radio" className="mt-3" name="gender" value="male" 
+                onChange={onChange}/>{" "}
               Male
-              <input className={genderbtn}type="radio" name="gender" value="female" /> Female
+              <input
+                className={genderbtn}
+                type="radio"
+                name="gender"
+                value="female"
+                onChange={onChange}
+              />{" "}
+              Female
             </div>
             <div className="mb-3">
-              <label for="pass" className="form-label">
+              <label htmlFor="pass" className="form-label">
                 Password
               </label>
-              <input type="password" className="form-control" id="pass" />
+              <input type="password" name="password" className="form-control" id="pass" 
+                onChange={onChange}/>
             </div>
             <div className="mb-3">
-              <label for="pass" className="form-label">
+              <label htmlFor="pass" className="form-label">
                 Confirm Password
               </label>
-              <input type="password" className="form-control" id="pass" />
+              <input type="password" name="password1" className="form-control" id="pass" 
+                onChange={onChange}/>
             </div>
-            <button type="submit" className="btn btn-success form-control">
+            <button type="submit" onClick={onSubmit} className="btn btn-success form-control">
               Submit
             </button>
           </form>

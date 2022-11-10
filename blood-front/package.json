@@ -37,5 +37,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://rblood.herokuapp.com"
+  "proxy": "http://rblood.herokuapp.com"
 }

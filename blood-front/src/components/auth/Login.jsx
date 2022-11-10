@@ -1,12 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import AuthContext from "../../context/auth/authContext";
+import Spinner from "../layout/Spinner"
 import { Navigate } from "react-router-dom";
 import style from "./login.module.css";
 
 function Login() {
   const { state, login } = useContext(AuthContext);
   const { loginpage, formsection } = style;
-
   const [formData, setFormData] = useState({});
   const { mobile, password } = formData;
 
@@ -28,7 +28,7 @@ function Login() {
   };
 
   if (state.loading) {
-    return <div>loading</div>;
+    return <Spinner />;
   }
 
   if (state.isAuthenticated) {
